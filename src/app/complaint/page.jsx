@@ -30,10 +30,10 @@ export default function Complaints() {
         </form>
         <div className={'flex items-center justify-center fixed bg-[#0005] w-full h-full top-0 left-0 ' + (show ? "scale-1" : " scale-0 hidden") } onClick={()=> setShow(false)} >
             <div className='bg-white p-5 flex flex-col gap-2' onClick={(e)=> e.stopPropagation()}>
-                <Typography className='font-semibold text-gray-800'>
+                <Typography className="font-semibold text-gray-800">
                     Complaint submitted successfully
                 </Typography>
-                <Typography className='text-gray-800'>
+                <Typography className="text-gray-800">
                     Your tracking id is:  #11133
                 </Typography>
                 <div className='flex justify-between'>
@@ -41,7 +41,7 @@ export default function Complaints() {
                     <div onClick={()=> {
                         let value = localStorage.getItem("saved");
                         if (value) {
-                            let array: string[] = JSON.parse(value);
+                            let array = JSON.parse(value);
                             array.push("#3456")
                             localStorage.setItem("saved", JSON.stringify(array))
                         }else{

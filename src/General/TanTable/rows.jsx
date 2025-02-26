@@ -1,21 +1,18 @@
 import { flexRender } from "@tanstack/react-table";
 import { FC, MouseEvent } from "react";
 
-interface TanRowsProps {
-	table: any;
-	onClick?: (event: MouseEvent<HTMLTableRowElement>) => void;
-}
 
-const TanRows: FC<TanRowsProps> = ({ table, onClick }) => {
+
+const TanRows= ({ table, onClick }) => {
 	return (
 		<tbody>
-			{table.getRowModel().rows.map((row: any, index: number) => (
+			{table.getRowModel().rows.map((row, index) => (
 				<tr
 					className={`${index % 2 !== 0 ? "" : ""} `}
 					key={index}
 					onClick={onClick ? onClick : undefined}
 				>
-					{row.getVisibleCells().map((cell: any, index: number) => (
+					{row.getVisibleCells().map((cell, index) => (
 						<td
 							className='border'
 							key={index}

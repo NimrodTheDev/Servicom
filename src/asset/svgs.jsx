@@ -1,8 +1,3 @@
-interface SvgIconProps {
-	color?: string;
-	width?: number;
-	height?: number;
-}
 export const ChatToggle = () => (
 	<svg
 		width='14'

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { SearchIcon, X } from "lucide-react";
 import DropDown from "../dropDown";
 import { Button, Popover, Typography } from "@material-tailwind/react";
@@ -6,16 +6,9 @@ import { FilterIcon } from "@/asset/svgs";
 import { FormInput } from "../form";
 import Link from "next/link";
 
-interface SearchCompProps {
-	searchTerm: string;
-	setSearchTerm: React.Dispatch<React.SetStateAction<string>>;
-	setPageIndex?: React.Dispatch<React.SetStateAction<number>>;
-	filterList?: string[];
-	handleFilterChange?: (selectedFilter: string) => void;
-	hideFilter?: boolean;
-}
 
-const SearchComp: React.FC<SearchCompProps> = ({
+
+const SearchComp= ({
 	searchTerm,
 	setSearchTerm,
 	setPageIndex,
@@ -23,13 +16,17 @@ const SearchComp: React.FC<SearchCompProps> = ({
 	handleFilterChange,
 	hideFilter,
 }) => {
-	const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+	const handleInputChange = (e) => {
 		setSearchTerm(e.target.value);
 		setPageIndex && setPageIndex(1);
 	};
 	const [isOpen, setIsOpen]=useState(false)
-	const localValue = localStorage.getItem("saved")
-	let parsedValue: any[] | null = localValue ? JSON.parse(localValue) : null
+	const [parsedValue, setParsedValue] = useState([])
+	useEffect(()=>{
+		const localValue = localStorage.getItem("saved")
+		let parsedValue= localValue ? JSON.parse(localValue) : null
+		setParsedValue(parsedValue)
+	}, [])
 
 	return (
 		<>

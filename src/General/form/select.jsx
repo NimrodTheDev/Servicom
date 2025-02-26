@@ -18,7 +18,7 @@ const FormSelect = ({
 	icon,
 	readOnly,
 	...rest
-}: iSelect) => {
+}) => {
 	return (
 		<div className='text-sm'>
 			{label && (

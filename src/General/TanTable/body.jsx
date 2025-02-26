@@ -2,14 +2,8 @@ import { FC, useRef, useEffect, useState } from "react";
 import TanHeader from "./header";
 import TanRows from "./rows";
 
-interface TanBodyProps {
-	table: any;
-	loadingState?: boolean;
-	onClick?: () => void;
-}
-
-const TanBody: FC<TanBodyProps> = ({ table, onClick }) => {
-	const scrollContainerRef = useRef<HTMLDivElement>(null);
+const TanBody= ({ table, onClick }) => {
+	const scrollContainerRef = useRef(null);
 	const [isDragging, setIsDragging] = useState(false);
 	const [startX, setStartX] = useState(0);
 	const [scrollLeft, setScrollLeft] = useState(0);
@@ -18,7 +12,7 @@ const TanBody: FC<TanBodyProps> = ({ table, onClick }) => {
 		const scrollContainer = scrollContainerRef.current;
 		if (!scrollContainer) return;
 
-		const handleMouseDown = (e: MouseEvent) => {
+		const handleMouseDown = (e) => {
 			setIsDragging(true);
 			setStartX(e.pageX - scrollContainer.offsetLeft);
 			setScrollLeft(scrollContainer.scrollLeft);
@@ -28,7 +22,7 @@ const TanBody: FC<TanBodyProps> = ({ table, onClick }) => {
 			setIsDragging(false);
 		};
 
-		const handleMouseMove = (e: MouseEvent) => {
+		const handleMouseMove = (e) => {
 			if (!isDragging) return;
 			e.preventDefault();
 			const x = e.pageX - scrollContainer.offsetLeft;

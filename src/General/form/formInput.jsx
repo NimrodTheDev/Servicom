@@ -23,7 +23,7 @@ const FormInput = ({
 	inputRef,
 	title,
 	...rest
-}: iInputField) => {
+}) => {
 	const isLeftIcon = iconPosition === "left";
 
 	return (

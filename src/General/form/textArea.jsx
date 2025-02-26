@@ -13,7 +13,7 @@ const FormTextArea = ({
 	required,
 	name,
 	readOnly,
-}: iInputField) => {
+}) => {
 	const isLeftIcon = iconPosition === "left";
 
 	return (

@@ -9,7 +9,7 @@ const Page=()=>{
         {
           accessorKey: "id",
           header: "Tracking ID",
-          cell:({row}:{row: any})=> `#${row.original.id}`
+          cell:({row})=> `#${row.original.id}`
         },
         {
           accessorKey: "category",
@@ -22,7 +22,7 @@ const Page=()=>{
         {
           id: "options",
           header: "",
-          cell: ({row}:{row:any}) => {
+          cell: ({row}) => {
           return(
             <Link href={"status/" + row.original.id} className="text-blue-500">View</Link>
           )},
