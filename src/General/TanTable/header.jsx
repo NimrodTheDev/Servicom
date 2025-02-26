@@ -1,15 +1,10 @@
-import { FC } from "react";
 
-interface TanHeaderProps {
-	table: any;
-}
-
-const TanHeader: FC<TanHeaderProps> = ({ table }) => {
+const TanHeader = ({ table }) => {
 	return (
 		<thead className='border'>
-			{table.getHeaderGroups().map((headerGroup: any) => (
+			{table.getHeaderGroups().map((headerGroup) => (
 				<tr className='' key={headerGroup.id}>
-					{headerGroup.headers.map((header: any, index: number) => (
+					{headerGroup.headers.map((header, index) => (
 						<th
 							className='text-left dark:text-white border text-black whitespace-nowrap bg-gray-100'
 							key={index}

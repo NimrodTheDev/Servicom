@@ -1,12 +1,7 @@
 import React from "react";
 
-interface PaginationProps {
-	table: any;
-	buttons: React.ReactNode[];
-	setPageIndex: (index: number) => void;
-}
 
-const Pagination: React.FC<PaginationProps> = ({
+const Pagination= ({
 	table,
 	buttons,
 	setPageIndex,

@@ -11,18 +11,7 @@ import TanBody from "./body";
 import SearchComp from "./searchComp";
 import { Spinner } from "react-activity";
 
-interface TanTableProps {
-	columnData: any[];
-	data: any[];
-	loadingState?: boolean;
-	onClick?: () => void;
-	showSearch?: boolean;
-	hidePaging?: boolean;
-	length?: number;
-	filterList?: string[];
-}
-
-const TanTable: FC<TanTableProps> = ({
+const TanTable= ({
 	columnData,
 	data,
 	loadingState,
@@ -32,15 +21,15 @@ const TanTable: FC<TanTableProps> = ({
 	length,
 	filterList,
 }) => {
-	const [searchTerm, setSearchTerm] = useState<string>("");
-	const [sorting, setSorting] = useState<any[]>([]);
-	const [pageIndex, setPageIndex] = useState<number>(0);
-	const [columnFilters, setColumnFilters] = useState<any[]>([]);
-	const [filteredData, setFilteredData] = useState<any[]>(data);
+	const [searchTerm, setSearchTerm] = useState("");
+	const [sorting, setSorting] = useState([]);
+	const [pageIndex, setPageIndex] = useState(0);
+	const [columnFilters, setColumnFilters] = useState([]);
+	const [filteredData, setFilteredData] = useState(data);
 
 	const tableData = useMemo(() => filteredData, [filteredData]);
 	const columns = useMemo(() => columnData, [columnData]);
-	const pageSize: number = length || 10;
+	const pageSize= length || 10;
 
 	const options = useMemo(
 		() => ({
@@ -98,7 +87,7 @@ const TanTable: FC<TanTableProps> = ({
 		return Math.min(totalPages - 1, startPage + pageSize - 1);
 	}, [startPage, pageSize, table, data, tableData]);
 
-	function isPageActive(pageIndex: number, currentPage: number) {
+	function isPageActive(pageIndex, currentPage) {
 		return pageIndex === currentPage;
 	}
 
@@ -129,14 +118,14 @@ const TanTable: FC<TanTableProps> = ({
 		return buttons;
 	}, [startPage, endPage, currentPage, table, data, tableData]);
 
-	const handleFilterChange = (selectedFilter: string) => {
+	const handleFilterChange = (selectedFilter) => {
 		if (selectedFilter === "") {
 			setFilteredData(data);
 			return;
 		}
 
 		const filtered = data.filter((item) =>
-			Object.values(item).some((value: any) =>
+			Object.values(item).some((value) =>
 				value
 					?.toString()
 					?.toLowerCase()

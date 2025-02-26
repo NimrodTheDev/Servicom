@@ -4,7 +4,7 @@ import { useQuill } from "react-quilljs";
 import "quill/dist/quill.snow.css";
 import { colors } from "@/constants/colors";
 
-const RichTextEditor = ({label}:{label: string}) => {
+const RichTextEditor = ({label}) => {
 	const [value, setValue] = useState("");
 	const { quill, quillRef } = useQuill();
 
