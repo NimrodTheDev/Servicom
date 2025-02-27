@@ -17,7 +17,7 @@ const Page=()=>{
     )
 }
 
-export async function generateStaticParams(){
+export async function generateDynamicParams(){
     return [{
         id: "1"
     }]
