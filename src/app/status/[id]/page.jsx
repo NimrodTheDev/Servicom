@@ -17,10 +17,5 @@ const Page=()=>{
     )
 }
 
-export async function generateDynamicParams(){
-    return [{
-        id: "1"
-    }]
-}
 
 export default Page
