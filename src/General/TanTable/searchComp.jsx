@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { SearchIcon, X } from "lucide-react";
-import DropDown from "../dropDown";
-import { Button, Popover, Typography } from "@material-tailwind/react";
-import { FilterIcon } from "@/asset/svgs";
+import { X } from "lucide-react";
+import { Button, Typography } from "@material-tailwind/react";
 import { FormInput } from "../form";
 import Link from "next/link";
 

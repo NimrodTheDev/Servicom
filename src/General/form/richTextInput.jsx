@@ -2,7 +2,8 @@ import React, { useEffect, useState } from "react";
 //@ts-ignore
 import { useQuill } from "react-quilljs";
 import "quill/dist/quill.snow.css";
-import { colors } from "@/constants/colors";
+import { colors } from "../../constants/colors";
+
 
 const RichTextEditor = ({label}) => {
 	const [value, setValue] = useState("");

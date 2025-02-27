@@ -1,6 +1,4 @@
 import Link from 'next/link';
-import Image from 'next/image';
-import hero from "@/asset/hero.jpeg"
 
 export default function Home() {
   return (
