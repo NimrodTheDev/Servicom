@@ -3,9 +3,10 @@ import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import dynamic from 'next/dynamic';
-import RichTextEditor from '@/General/form/richTextInput';
-import { FormInput, FormSelect } from '@/General/form';
+
 import { Typography } from '@material-tailwind/react';
+import { FormInput, FormSelect } from '../../General/form';
+import RichTextEditor from '../../General/form/richTextInput';
 
 
 export default function Complaints() {

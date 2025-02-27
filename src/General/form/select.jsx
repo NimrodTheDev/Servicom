@@ -1,5 +1,6 @@
 import React from "react";
-import { colors } from "@/constants/colors";
+import { colors } from "../../constants/colors";
+
 
 const FormSelect = ({
 	label,

@@ -1,8 +1,9 @@
 "use client"
 
-import TanTable from "@/General/TanTable"
+
 import { Popover } from "@material-tailwind/react";
 import Link from "next/link";
+import TanTable from "../../General/TanTable";
 
 const Page=()=>{
     const columns = [
